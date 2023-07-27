@@ -1,9 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 .container {
   width: 100%;
   max-width: 960px;
@@ -14,10 +8,6 @@
 
 .card {
   padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 .shopping-info {
@@ -36,15 +26,39 @@
 }
 
 .product-card {
+  font-size: 14px;
   position: relative;
-  background-color: #fff;
+  background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px #0000001a;
   cursor: pointer;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+.product-card p {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
 .product-card:hover:not(.selected) {
   background-color: #eee;
   box-shadow: 0 4px 8px #0000001a;
+}
+
+.selected {
+  background-color: #444;
+  color: #fff;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+h2 {
+  text-align: center;
+}
+
+.product-card h3 {
+  font-size: 14px;
+}
+
+.product-card p:last-of-type {
+  font-weight: bolder;
 }

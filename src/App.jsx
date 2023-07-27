@@ -10,9 +10,9 @@ function ProductCard({
 }) {
   return (
     <div className="product-card">
-      <h2>{product.title}</h2>
+      <h3>{product.title}</h3>
       <p>{product.description}</p>
-      <p>Price:${product.price.toFixed(2)}</p>
+      <p className="price">Price:${product.price.toFixed(2)}</p>
       <button
         onClick={
           isAdded
@@ -52,7 +52,6 @@ function ProductGrid({
 function CartSummary({ products }) {
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
   return (
-    // <h2>Damian Śmigielski homework 02: Product Cart</h2>
     <div className="shopping-info">
       <p>Shopping Card</p>
       <p>Selected Products: {products.length}</p>
