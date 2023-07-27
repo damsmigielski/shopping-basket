@@ -28,7 +28,7 @@ function ProductCard({
             ? () => handleRemoveFromCart(product)
             : () => handleAddToCart(product)
         }>
-        {isAdded ? "Remove" : "Add to card"}
+        {isAdded ? "emove" : "add product"}
       </button>
     </div>
   );
@@ -41,12 +41,7 @@ function ProductGrid({
   addedProducts,
 }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-      }}>
+    <div>
       {products.map((product) => {
         const isAdded = addedProducts.some((p) => p.id === product.id);
         return (
@@ -67,9 +62,10 @@ function CartSummary({ products }) {
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
   return (
     <div>
-      <h2>Damian Śmigielski: Product Cart</h2>
+      <h2>Damian Śmigielski homework 02: Product Cart</h2>
+      <p>Shopping Card</p>
       <p>Selected Products: {products.length}</p>
-      <p>Całkowita cena: {totalPrice}</p>
+      <p>Total Price:${totalPrice}</p>
     </div>
   );
 }
