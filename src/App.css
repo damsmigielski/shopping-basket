@@ -41,6 +41,7 @@
   font-size: 12px;
   margin-bottom: 30px;
 }
+
 .product-card:hover:not(.selected) {
   background-color: #eee;
   box-shadow: 0 4px 8px #0000001a;
