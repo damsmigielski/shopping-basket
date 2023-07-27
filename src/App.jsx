@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div className="container">
-      <h2>Damian Śmigielski HOMEWORK 02: product card</h2>
+      <h2>Damian Śmigielski HOMEWORK 02: product cart</h2>
       <CartSummary products={cart} />
       <ProductGrid
         products={productsData}
