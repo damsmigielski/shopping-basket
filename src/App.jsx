@@ -8,17 +8,22 @@ function ProductCard({
   handleRemoveFromCart,
   isAdded,
 }) {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+    isAdded ? handleRemoveFromCart(product) : handleAddToCart(product);
+  };
+
   return (
-    <div className="product-card">
+    <div className={`product-card ${isSelected ? "selected" : ""}`}>
       <h3>{product.title}</h3>
       <p>{product.description}</p>
       <p className="price">Price:${product.price.toFixed(2)}</p>
-      <button
-        onClick={
-          isAdded
-            ? () => handleRemoveFromCart(product)
-            : () => handleAddToCart(product)
-        }>
+      <button onClick={handleClick}>
+        {isAdded
+          ? () => handleRemoveFromCart(product)
+          : () => handleAddToCart(product)}
         {isAdded ? "remove" : "add product"}
       </button>
     </div>
@@ -53,7 +58,7 @@ function CartSummary({ products }) {
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
   return (
     <div className="shopping-info">
-      <p>Shopping Card</p>
+      <p>Shopping Cart</p>
       <p>Selected Products: {products.length}</p>
       <p>Total Price:${totalPrice.toFixed(2)}</p>
     </div>
