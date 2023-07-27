@@ -9,7 +9,7 @@ function ProductCard({
   isAdded,
 }) {
   return (
-    <div>
+    <div className="product-card">
       <h2>{product.title}</h2>
       <p>{product.description}</p>
       <p>Price:${product.price.toFixed(2)}</p>
@@ -32,7 +32,7 @@ function ProductGrid({
   addedProducts,
 }) {
   return (
-    <div>
+    <div className="product-grid">
       {products.map((product) => {
         const isAdded = addedProducts.some((p) => p.id === product.id);
         return (
@@ -52,8 +52,8 @@ function ProductGrid({
 function CartSummary({ products }) {
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
   return (
-    <div>
-      <h2>Damian Śmigielski homework 02: Product Cart</h2>
+    // <h2>Damian Śmigielski homework 02: Product Cart</h2>
+    <div className="shopping-info">
       <p>Shopping Card</p>
       <p>Selected Products: {products.length}</p>
       <p>Total Price:${totalPrice.toFixed(2)}</p>
@@ -73,7 +73,8 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
+      <h2>Damian Śmigielski HOMEWORK 02: product card</h2>
       <CartSummary products={cart} />
       <ProductGrid
         products={productsData}
