@@ -12,7 +12,7 @@ function ProductCard({
     <div>
       <h2>{product.title}</h2>
       <p>{product.description}</p>
-      <p>price:${product.price}</p>
+      <p>Price:${product.price.toFixed(2)}</p>
       <button
         onClick={
           isAdded
@@ -56,7 +56,7 @@ function CartSummary({ products }) {
       <h2>Damian Śmigielski homework 02: Product Cart</h2>
       <p>Shopping Card</p>
       <p>Selected Products: {products.length}</p>
-      <p>Total Price:${totalPrice}</p>
+      <p>Total Price:${totalPrice.toFixed(2)}</p>
     </div>
   );
 }
