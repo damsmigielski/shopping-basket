@@ -71,7 +71,7 @@ ProductGrid.propTypes = {
   ).isRequired,
   handleAddToCart: PropTypes.func.isRequired,
   handleRemoveFromCart: PropTypes.func.isRequired,
-  addedProducts: PropTypes.isRequired,
+  addedProducts: PropTypes.array.isRequired,
 };
 
 function CartSummary({ products }) {
