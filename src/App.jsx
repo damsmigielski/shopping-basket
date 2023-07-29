@@ -1,5 +1,5 @@
 import { useState } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./App.css";
 import productsData from "./data/ProductsData.jsx";
 
@@ -31,16 +31,15 @@ function ProductCard({
 }
 
 ProductCard.propTypes = {
-  product: propTypes.shape({
-    title: propTypes.string,
-    description: propTypes.string,
-    price: propTypes.number,
+  product: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
   }).isRequired,
-  handleAddToCart: propTypes.func.isRequired,
-  handleRemoveFromCart: propTypes.func.isRequired,
-  isAdded: propTypes.bool.isRequired,
+  handleAddToCart: PropTypes.func.isRequired,
+  handleRemoveFromCart: PropTypes.func.isRequired,
+  isAdded: PropTypes.bool.isRequired,
 };
-
 function ProductGrid({
   products,
   handleAddToCart,
@@ -66,14 +65,16 @@ function ProductGrid({
 }
 
 ProductGrid.propTypes = {
-  products: propTypes.shape({
-    title: propTypes.string,
-    description: propTypes.string,
-    price: propTypes.number,
-  }).isRequired,
-  handleAddToCart: propTypes.func.isRequired,
-  handleRemoveFromCart: propTypes.func.isRequired,
-  addedProducts: propTypes.bool.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      price: PropTypes.number,
+    })
+  ).isRequired,
+  handleAddToCart: PropTypes.func.isRequired,
+  handleRemoveFromCart: PropTypes.func.isRequired,
+  addedProducts: PropTypes.array.isRequired,
 };
 
 function CartSummary({ products }) {
