@@ -21,9 +21,6 @@ function ProductCard({
       <p>{product.description}</p>
       <p className="price">Price:${product.price.toFixed(2)}</p>
       <button onClick={handleClick}>
-        {isAdded
-          ? () => handleRemoveFromCart(product)
-          : () => handleAddToCart(product)}
         {isAdded ? "remove" : "add product"}
       </button>
     </div>
@@ -74,7 +71,7 @@ ProductGrid.propTypes = {
   ).isRequired,
   handleAddToCart: PropTypes.func.isRequired,
   handleRemoveFromCart: PropTypes.func.isRequired,
-  addedProducts: PropTypes.array.isRequired,
+  addedProducts: PropTypes.isRequired,
 };
 
 function CartSummary({ products }) {
@@ -87,6 +84,14 @@ function CartSummary({ products }) {
     </div>
   );
 }
+
+CartSummary.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      price: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 function App() {
   const [cart, setCart] = useState([]);
