@@ -21,7 +21,7 @@ Zadanie 2 - rozwiązanie;
 *ostylowałem siatkę produktów wg. swojego wyczucia estetycznego, nie zmieniając pierwotnego założenia twórcy wzoru,
 *deploy aplikacji z użyciem serwisu netlify.app
 
-moja aplikacja dostępna na: https://damiansmigielski-counter-app.netlify.app/
+moja aplikacja dostępna na: https://damiansmigielski-shopping-basket.netlify.app/
 
 
 
