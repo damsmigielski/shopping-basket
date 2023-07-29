@@ -1,4 +1,5 @@
 import { useState } from "react";
+import propTypes from "prop-types";
 import "./App.css";
 import productsData from "./data/ProductsData.jsx";
 
@@ -9,7 +10,6 @@ function ProductCard({
   isAdded,
 }) {
   const [isSelected, setIsSelected] = useState(false);
-
   const handleClick = () => {
     setIsSelected(!isSelected);
     isAdded ? handleRemoveFromCart(product) : handleAddToCart(product);
@@ -29,6 +29,17 @@ function ProductCard({
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  product: propTypes.shape({
+    title: propTypes.string,
+    description: propTypes.string,
+    price: propTypes.number,
+  }).isRequired,
+  handleAddToCart: propTypes.func.isRequired,
+  handleRemoveFromCart: propTypes.func.isRequired,
+  isAdded: propTypes.bool.isRequired,
+};
 
 function ProductGrid({
   products,
@@ -53,6 +64,17 @@ function ProductGrid({
     </div>
   );
 }
+
+ProductGrid.propTypes = {
+  products: propTypes.shape({
+    title: propTypes.string,
+    description: propTypes.string,
+    price: propTypes.number,
+  }).isRequired,
+  handleAddToCart: propTypes.func.isRequired,
+  handleRemoveFromCart: propTypes.func.isRequired,
+  addedProducts: propTypes.bool.isRequired,
+};
 
 function CartSummary({ products }) {
   const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
